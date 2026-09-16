@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Registration Form</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #ddd6fe 0,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #bfdbfe 0,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #f4f1ff,
+            #ffffff,
+            #edf6ff
+        );
+
+    padding:30px 20px;
+
+    color:#172554;
+
+    overflow-x:hidden;
+}
+
+
+
+.background-shape{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+
+
+.shape-one{
+
+    width:280px;
+    height:280px;
+
+    left:-150px;
+    top:-50px;
+
+    background:#ddd6fe;
+
+    opacity:.55;
+
+    filter:blur(2px);
+}
+
+
+.shape-two{
+
+    width:320px;
+    height:320px;
+
+    right:-160px;
+    bottom:-100px;
+
+    background:#bfdbfe;
+
+    opacity:.5;
+
+    filter:blur(5px);
+}
+
+
+
+.main{
+
+    width:100%;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:22px;
+
+}
+
+
+.cap-icon{
+
+    width:62px;
+    height:62px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9333ea,
+            #2563eb
+        );
+
+    color:white;
+
+    font-size:29px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(79,70,229,.25);
+}
+
+
+.header h1{
+
+    margin-top:10px;
+
+    font-size:38px;
+
+    line-height:1.2;
+
+    color:#0f172a;
+
+}
+
+
+.header h1 span{
+
+    color:#6d28d9;
+
+}
+
+
+.header p{
+
+    margin-top:5px;
+
+    font-size:14px;
+
+    color:#64748b;
+
+}
+
+
+
+.heading-line{
+
+    width:170px;
+
+    height:4px;
+
+    margin:15px auto 0;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9333ea,
+            #2563eb
+        );
+
+}
+
+
+
+.card{
+
+    width:100%;
+
+    background:
+        rgba(255,255,255,.97);
+
+    border-radius:25px;
+
+    padding:25px 28px 22px;
+
+    border:1px solid #e0e7ff;
+
+    box-shadow:
+        0 20px 60px
+        rgba(30,41,59,.12);
+
+}
+
+
+.welcome{
+
+    width:100%;
+
+    min-height:82px;
+
+    padding:15px 20px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            105deg,
+            #eee9ff,
+            #e8f1ff
+        );
+
+    border:1px solid #ddd6fe;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:25px;
+
+}
+
+
+.welcome-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.welcome-icon{
+
+    width:55px;
+    height:55px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5
+        );
+
+    color:white;
+
+    font-size:24px;
+
+}
+
+
+.welcome h2{
+
+    font-size:19px;
+
+    color:#172554;
+
+}
+
+
+.welcome p{
+
+    font-size:12px;
+
+    color:#64748b;
+
+}
+
+
+.future{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding-left:25px;
+
+    border-left:2px solid #c4b5fd;
+
+    color:#315aa6;
+
+    font-size:13px;
+
+    line-height:1.4;
+
+}
+
+
+.future i{
+
+    font-size:27px;
+
+    color:#6d28d9;
+
+}
+
+
+.form-row{
+
+    display:flex;
+
+    align-items:center;
+
+    width:100%;
+
+    min-height:48px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.form-label{
+
+    width:190px;
+
+    flex-shrink:0;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    color:#334155;
+
+}
+
+
+.form-label i{
+
+    width:25px;
+
+    color:#7c3aed;
+
+    font-size:16px;
+
+}
+
+
+
+
+.input-area{
+
+    flex:1;
+
+}
+
+
+
+
+.input-area input[type="text"],
+.input-area input[type="email"],
+.input-area input[type="password"],
+.input-area input[type="tel"],
+.input-area input[type="number"],
+.input-area select,
+.input-area textarea{
+
+    width:100%;
+
+    height:38px;
+
+    padding:7px 11px;
+
+    background:#ffffff !important;
+
+    color:#1e293b !important;
+
+    border:1.5px solid #b9c3d6 !important;
+
+    border-radius:6px;
+
+    outline:none;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:12px;
+
+    box-shadow:
+        inset 0 1px 2px
+        rgba(0,0,0,.03);
+
+    transition:.25s ease;
+
+}
+
+
+.input-area input::placeholder,
+.input-area textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+
+.input-area input:focus,
+.input-area select:focus,
+.input-area textarea:focus{
+
+    border-color:#7c3aed !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(124,58,237,.10);
+
+}
+
+
+
+
+.name-inputs{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+.name-inputs input{
+
+    flex:1;
+
+}
+
+
+.separator{
+
+    font-weight:600;
+
+    color:#64748b;
+
+}
+
+
+
+.dob{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+}
+
+
+.dob input{
+
+    width:65px !important;
+
+    text-align:center;
+
+}
+
+
+.dob input:nth-child(3){
+
+    width:70px !important;
+
+}
+
+
+.dob input:nth-child(5){
+
+    width:85px !important;
+
+}
+
+
+.dob-separator{
+
+    color:#64748b;
+
+    font-weight:600;
+
+}
+
+
+.dob-hint{
+
+    margin-left:8px;
+
+    color:#64748b;
+
+    font-size:11px;
+
+    font-style:italic;
+
+}
+
+
+
+.mobile{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+
+.mobile .country{
+
+    width:58px !important;
+
+    text-align:center;
+
+    background:#f5f3ff !important;
+
+    color:#5b21b6 !important;
+
+    font-weight:600;
+
+}
+
+
+.mobile .number{
+
+    flex:1;
+
+}
+
+
+
+.password-box{
+
+    position:relative;
+
+}
+
+
+.password-box input{
+
+    padding-right:38px !important;
+
+}
+
+
+.eye{
+
+    position:absolute;
+
+    right:12px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#64748b;
+
+    cursor:pointer;
+
+}
+
+
+.radio-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+.radio-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    font-size:12px;
+
+    color:#334155;
+
+}
+
+
+.radio-item input{
+
+    width:15px;
+
+    height:15px;
+
+    accent-color:#7c3aed;
+
+}
+
+
+.department{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.department label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    font-size:12px;
+
+    color:#334155;
+
+}
+
+
+.department input{
+
+    width:14px;
+
+    height:14px;
+
+    accent-color:#7c3aed;
+
+}
+
+
+
+.course select{
+
+    cursor:pointer;
+
+}
+
+
+
+.photo-input{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.photo-input input[type="file"]{
+
+    width:auto;
+
+    height:auto;
+
+    padding:5px;
+
+    background:#f8fafc !important;
+
+    border:1px solid #b9c3d6 !important;
+
+    border-radius:5px;
+
+    font-size:11px;
+
+}
+
+
+
+.input-area textarea{
+
+    height:80px !important;
+
+    resize:none;
+
+    padding-top:10px;
+
+}
+
+
+
+.button-area{
+
+    text-align:center;
+
+    margin-top:18px;
+
+}
+
+
+.register{
+
+    min-width:315px;
+
+    padding:13px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #9333ea,
+            #2563eb
+        );
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(79,70,229,.30);
+
+    transition:.3s;
+
+}
+
+
+.register:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(79,70,229,.38);
+
+}
+
+
+.register i{
+
+    margin-right:8px;
+
+}
+
+
+
+.bottom{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:13px;
+
+    font-size:12px;
+
+    color:#7c83a1;
+
+}
+
+
+.bottom-line{
+
+    width:50px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9333ea,
+            #2563eb
+        );
+
+}
+
+
+.bottom span{
+
+    color:#6d28d9;
+
+    font-weight:600;
+
+}
+
+
+
+.left-quote{
+
+    position:fixed;
+
+    left:25px;
+
+    top:55%;
+
+    transform:translateY(-50%);
+
+    width:115px;
+
+    color:#312e81;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    font-style:italic;
+
+    text-align:center;
+
+}
+
+
+.right-quote{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:100px;
+
+    width:120px;
+
+    text-align:center;
+
+    color:#312e81;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    font-style:italic;
+
+}
+
+
+
+.books{
+
+    position:fixed;
+
+    left:0;
+
+    bottom:0;
+
+    width:150px;
+
+    z-index:-1;
+
+}
+
+
+.book{
+
+    width:140px;
+
+    height:32px;
+
+    margin-top:3px;
+
+    border-radius:4px 10px 10px 4px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:11px;
+
+    box-shadow:
+        0 4px 8px
+        rgba(0,0,0,.15);
+
+}
+
+
+.book1{
+
+    background:#4338ca;
+
+    transform:rotate(-3deg);
+
+}
+
+
+.book2{
+
+    background:#7c3aed;
+
+    transform:rotate(2deg);
+
+}
+
+
+.book3{
+
+    background:#2563eb;
+
+    transform:rotate(-2deg);
+
+}
+
+
+.book4{
+
+    background:#9333ea;
+
+    transform:rotate(3deg);
+
+}
+
+
+.building{
+
+    position:fixed;
+
+    right:0;
+
+    bottom:0;
+
+    width:150px;
+
+    height:230px;
+
+    z-index:-1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #dbeafe,
+            #bfdbfe
+        );
+
+    border-radius:15px 0 0 0;
+
+    opacity:.75;
+
+}
+
+
+.roof{
+
+    position:absolute;
+
+    top:-48px;
+
+    left:0;
+
+    width:0;
+
+    height:0;
+
+    border-left:75px solid transparent;
+
+    border-right:75px solid transparent;
+
+    border-bottom:48px solid #93c5fd;
+
+}
+
+
+.window{
+
+    width:28px;
+
+    height:35px;
+
+    background:#eff6ff;
+
+    border:3px solid #93c5fd;
+
+    position:absolute;
+
+}
+
+
+.w1{
+
+    left:25px;
+    top:40px;
+
+}
+
+
+.w2{
+
+    right:25px;
+    top:40px;
+
+}
+
+
+.w3{
+
+    left:25px;
+    top:95px;
+
+}
+
+
+.w4{
+
+    right:25px;
+    top:95px;
+
+}
+
+
+.door{
+
+    position:absolute;
+
+    width:38px;
+
+    height:65px;
+
+    bottom:0;
+
+    left:56px;
+
+    background:#64748b;
+
+    border-radius:5px 5px 0 0;
+
+}
+
+
+.success{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:10px;
+
+    text-align:center;
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    border-radius:8px;
+
+    font-size:12px;
+
+}
+
+
+
+@media(max-width:900px){
+
+    .left-quote,
+    .right-quote,
+    .books,
+    .building{
+
+        display:none;
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    body{
+
+        padding:20px 10px;
+
+    }
+
+
+    .card{
+
+        padding:18px;
+
+    }
+
+
+    .header h1{
+
+        font-size:28px;
+
+    }
+
+
+    .welcome{
+
+        padding:14px;
+
+    }
+
+
+    .future{
+
+        display:none;
+
+    }
+
+
+    .form-row{
+
+        display:block;
+
+        margin-bottom:16px;
+
+    }
+
+
+    .form-label{
+
+        width:100%;
+
+        margin-bottom:7px;
+
+    }
+
+
+    .register{
+
+        min-width:220px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="background-shape shape-one"></div>
+
+<div class="background-shape shape-two"></div>
+
+
+
+
+<div class="left-quote">
+
+    "A small<br>
+    step today<br>
+    leads to a<br>
+    brighter<br>
+    tomorrow"
+
+</div>
+
+
+
+<div class="right-quote">
+
+    Good<br>
+    Students<br>
+    Brighter<br>
+    Futures<br>
+    ♡
+
+</div>
+
+
+<div class="books">
+
+    <div class="book book1">
+        Knowledge
+    </div>
+
+    <div class="book book2">
+        Skills
+    </div>
+
+    <div class="book book3">
+        Growth
+    </div>
+
+    <div class="book book4">
+        Success
+    </div>
+
+</div>
+
+
+
+<div class="building">
+
+    <div class="roof"></div>
+
+    <div class="window w1"></div>
+
+    <div class="window w2"></div>
+
+    <div class="window w3"></div>
+
+    <div class="window w4"></div>
+
+    <div class="door"></div>
+
+</div>
+
+
+<div class="main">
+
+
+
+
+    <div class="header">
+
+        <div class="cap-icon">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+        </div>
+
+
+        <h1>
+
+            Student
+
+            <span>Registration</span>
+
+            Form
+
+        </h1>
+
+
+        <p>
+
+            Fill your details to begin your learning journey
+
+        </p>
+
+
+        <div class="heading-line"></div>
+
+    </div>
+
+
+
+
+    <div class="card">
+
+
+        <!-- Welcome -->
+
+        <div class="welcome">
+
+
+            <div class="welcome-left">
+
+
+                <div class="welcome-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+
+                        Let's Get You Registered
+
+                    </h2>
+
+
+                    <p>
+
+                        Please fill in your details carefully
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="future">
+
+                <div>
+
+                    Your<br>
+                    Future<br>
+                    Starts Here
+
+                </div>
+
+                <i class="fa-solid fa-rocket"></i>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-id-card"></i>
+
+                Roll no. :
+
+            </div>
+
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    placeholder="Enter your roll number"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+
+  
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-user"></i>
+
+                Student name :
+
+            </div>
+
+
+            <div class="input-area name-inputs">
+
+
+                <input
+                    type="text"
+                    placeholder="First Name"
+                    required
+                >
+
+
+                <span class="separator">-</span>
+
+
+                <input
+                    type="text"
+                    placeholder="Last Name"
+                    required
+                >
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+                Father's name :
+
+            </div>
+
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    placeholder="Enter father's name"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Date of birth :
+
+            </div>
+
+
+            <div class="input-area dob">
+
+
+                <input
+                    type="number"
+                    min="1"
+                    max="31"
+                    placeholder="Day"
+                    required
+                >
+
+
+                <span class="dob-separator">-</span>
+
+
+                <input
+                    type="number"
+                    min="1"
+                    max="12"
+                    placeholder="Month"
+                    required
+                >
+
+
+                <span class="dob-separator">-</span>
+
+
+                <input
+                    type="number"
+                    min="1950"
+                    max="2026"
+                    placeholder="Year"
+                    required
+                >
+
+
+                <span class="dob-hint">
+
+                    (DD-MM-YYYY)
+
+                </span>
+
+
+            </div>
+
+        </div>
+
+
+
+  
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-phone"></i>
+
+                Mobile no. :
+
+            </div>
+
+
+            <div class="input-area mobile">
+
+
+                <input
+                    type="text"
+                    value="+91"
+                    class="country"
+                    readonly
+                >
+
+
+                <input
+                    type="tel"
+                    class="number"
+                    maxlength="10"
+                    placeholder="Enter mobile number"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Email id :
+
+            </div>
+
+
+            <div class="input-area">
+
+                <input
+                    type="email"
+                    placeholder="Enter email address"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Password :
+
+            </div>
+
+
+            <div class="input-area password-box">
+
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+
+                <i
+                    class="fa-solid fa-eye eye"
+                    id="eye"
+                    onclick="togglePassword()">
+                </i>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-venus-mars"></i>
+
+                Gender :
+
+            </div>
+
+
+            <div class="input-area radio-area">
+
+
+                <label class="radio-item">
+
+                    <input
+                        type="radio"
+                        name="gender"
+                        required
+                    >
+
+                    Male
+
+                </label>
+
+
+                <label class="radio-item">
+
+                    <input
+                        type="radio"
+                        name="gender"
+                    >
+
+                    Female
+
+                </label>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                Department :
+
+            </div>
+
+
+            <div class="input-area department">
+
+
+                <label>
+
+                    <input type="checkbox">
+
+                    CSE
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox">
+
+                    IT
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox">
+
+                    ECE
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox">
+
+                    Civil
+
+                </label>
+
+
+                <label>
+
+                    <input type="checkbox">
+
+                    Mech
+
+                </label>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                Course :
+
+            </div>
+
+
+            <div class="input-area course">
+
+
+                <select required>
+
+                    <option value="">
+
+                  
+
+                    </option>
+
+
+                    <option>
+
+                        BCA
+
+                    </option>
+
+
+                    <option>
+
+                        MCA
+
+                    </option>
+
+
+                    <option>
+
+                        B.Tech
+
+                    </option>
+
+
+                    <option>
+
+                        M.Tech
+
+                    </option>
+
+
+                    <option>
+
+                        BBA
+
+                    </option>
+
+
+                    <option>
+
+                        MBA
+
+                    </option>
+
+
+                </select>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-image"></i>
+
+                Student photo :
+
+            </div>
+
+
+            <div class="input-area photo-input">
+
+
+                <input
+                    type="file"
+                    accept="image/*"
+                    required
+                >
+
+
+            </div>
+
+        </div>
+
+
+
+    
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                City :
+
+            </div>
+
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    placeholder="Enter your city"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-label">
+
+                <i class="fa-solid fa-house"></i>
+
+                Address :
+
+            </div>
+
+
+            <div class="input-area">
+
+                <textarea
+                    placeholder="Enter your full address"
+                    required
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="button-area">
+
+            <button
+                type="button"
+                class="register"
+                onclick="registerStudent()"
+            >
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Register
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="success"
+            id="success"
+        >
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Registration submitted successfully!
+
+        </div>
+
+
+
+        <!-- Bottom -->
+
+        <div class="bottom">
+
+            <div class="bottom-line"></div>
+
+            <span>Dream</span>
+
+            |
+
+            <span>Learn</span>
+
+            |
+
+            <span>Achieve</span>
+
+            <div class="bottom-line"></div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+function togglePassword(){
+
+    const password =
+        document.getElementById("password");
+
+    const eye =
+        document.getElementById("eye");
+
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+        eye.classList.remove("fa-eye");
+
+        eye.classList.add("fa-eye-slash");
+
+    }
+
+    else{
+
+        password.type = "password";
+
+        eye.classList.remove("fa-eye-slash");
+
+        eye.classList.add("fa-eye");
+
+    }
+
+}
+
+
+
+
+
+function registerStudent(){
+
+    const form =
+        document.querySelector("form");
+
+    document
+        .getElementById("success")
+        .style.display = "block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
